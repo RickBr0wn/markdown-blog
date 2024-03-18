@@ -1,5 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import NavBar from '~/components/nav/page'
+import { ThemeProvider } from '~/components/theme-provider'
 import { cn } from '~/lib/utils'
 
 const inter = Inter({
@@ -19,7 +21,17 @@ export default function RootLayout({ children }: RootLayoutProps) {
           inter.variable
         )}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="max-w-7xl mx-auto p-10 space-y-5">
+            <NavBar />
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   )

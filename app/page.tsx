@@ -1,11 +1,7 @@
 import { Button } from '~/components/ui/button'
 
 export default function Home() {
-  return (
-    <main>
-      <Button>CLICK</Button>pp
-    </main>
-  )
+  return <div>App</div>
 }
 
 // Path: app/page.tsx
